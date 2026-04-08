@@ -1,26 +1,178 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* -------------------------------------------------------------------------- */
+/* 1. CORE DESIGN SYSTEM & VARIABLES                                          */
+/* -------------------------------------------------------------------------- */
+
+@theme {
+  --color-deep-charcoal: #050505;
+  --color-brand-green: #82d91e;
+  --color-slate-white: #F8FAFC;
+  --radius-3xl: 24px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --background: var(--color-slate-white);
+  --foreground: var(--color-deep-charcoal);
+  
+  /* Responsive Fluid Typography Tokens */
+  --font-fluid-h1: clamp(2.5rem, 8vw + 1rem, 6rem);
+  --font-fluid-body: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-deep-charcoal);
+    --foreground: var(--color-slate-white);
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/* 2. BASE ELEMENT DEFAULTS                                                   */
+/* -------------------------------------------------------------------------- */
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+h1, h2, h3, h4, .font-black {
+  font-weight: 900 !important;
+  letter-spacing: -0.02em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. SCROLL SYSTEMS                                                          */
+/* -------------------------------------------------------------------------- */
+
+/* Custom Branding for Native Scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-green);
+  border-radius: 10px;
+}
+
+/* Utility to hide scrollbars while preserving scrolling capability */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE / Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Webkit */
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. ANIMATION SYSTEMS                                                       */
+/* -------------------------------------------------------------------------- */
+
+/* Shimmer Loading State Transition */
+@keyframes shimmer {
+  0% { background-position: -800px 0; }
+  100% { background-position: 800px 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(200, 200, 200, 0.15) 25%,
+    rgba(200, 200, 200, 0.35) 50%,
+    rgba(200, 200, 200, 0.15) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+.dark .shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.10) 50%,
+    rgba(255, 255, 255, 0.04) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+/* Headless Marquee Content Flow */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  display: flex;
+  width: fit-content;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. ELITE TRANSPILED UTILITIES                                              */
+/* -------------------------------------------------------------------------- */
+
+/* Strategic Reading Progress Indicator */
+#reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8FCB27, #a3e635);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px rgba(143, 203, 39, 0.6);
+}
+
+/* Glassmorphism Structural Tokens */
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-light {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.dark .glass-light {
+  background: rgba(26, 26, 26, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Micro-interaction Glows */
+.inner-glow:hover {
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Engineering Technical Overlays */
+.grid-bg {
+  background-image: radial-gradient(rgba(130, 217, 30, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Fluid Layout Controllers */
+.fluid-h1 {
+  font-size: var(--font-fluid-h1);
+  line-height: 0.9;
+}
+
+.fluid-body {
+  font-size: var(--font-fluid-body);
+  line-height: 1.6;
 }
