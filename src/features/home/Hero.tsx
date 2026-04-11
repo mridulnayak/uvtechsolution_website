@@ -88,7 +88,7 @@ export function Hero() {
   );
 
   return (
-    <section id="home-hero" className="relative w-full py-20 lg:py-32 xl:py-40 flex items-center justify-center overflow-hidden bg-white dark:bg-[#050505] transition-colors duration-300">
+    <section id="home-hero" className="relative w-full py-16 md:py-32 xl:py-40 flex items-center justify-center overflow-hidden bg-white dark:bg-[#050505] transition-colors duration-300">
       {/* Structural Abstract Infrastructure Overlay */}
       <div className="absolute inset-0 grid-bg opacity-[0.15] pointer-events-none" />
       
@@ -104,7 +104,7 @@ export function Hero() {
         </ScrollReveal>
 
         <ScrollReveal entranceDelay={0.12}>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-8 break-words leading-tight">
             {prioritizedHeroHeadline}
           </h1>
         </ScrollReveal>
@@ -116,14 +116,14 @@ export function Hero() {
         </ScrollReveal>
 
         <ScrollReveal entranceDelay={0.28}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <Link href="/products" className="w-full sm:w-auto min-h-[44px] px-8 py-4 rounded-full bg-brand-green text-white font-black hover:bg-lime-600 transition-colors shadow-xl shadow-brand-green/20 flex items-center justify-center gap-2 uppercase tracking-widest text-[10px]">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 md:mb-20">
+            <motion.div className="w-full sm:w-auto" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <Link href="/products" className="w-full sm:w-auto min-h-[48px] px-8 py-4 rounded-full bg-brand-green text-white font-black hover:bg-lime-600 transition-colors shadow-xl shadow-brand-green/20 flex items-center justify-center gap-2 uppercase tracking-widest text-[10px]">
                 Explore Products <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <Link href="/contact" className="w-full sm:w-auto min-h-[44px] px-8 py-4 rounded-full bg-[#050505] text-slate-white dark:bg-slate-white dark:text-[#050505] font-black hover:opacity-90 transition-opacity flex items-center justify-center uppercase tracking-widest text-[10px]">
+            <motion.div className="w-full sm:w-auto" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <Link href="/contact" className="w-full sm:w-auto min-h-[48px] px-8 py-4 rounded-full bg-[#050505] text-slate-white dark:bg-slate-white dark:text-[#050505] font-black hover:opacity-90 transition-opacity flex items-center justify-center uppercase tracking-widest text-[10px]">
                 Request Enterprise Demo
               </Link>
             </motion.div>
@@ -138,7 +138,7 @@ export function Hero() {
             <div className="glass rounded-2xl border border-white/20 dark:border-white/10 p-2 md:p-4 shadow-2xl overflow-hidden aspect-video flex items-center justify-center bg-gray-50/50 dark:bg-deep-charcoal/50 backdrop-blur-xl relative">
               <button
                 onClick={(mouseEvent) => { mouseEvent.stopPropagation(); handleGalleryPagination(-1); }}
-                className="absolute left-4 z-40 p-2 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green"
+                className="absolute left-2 md:left-4 z-40 p-1.5 md:p-2 rounded-full bg-black/20 md:bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green"
                 aria-label="View previous showcase asset"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -146,7 +146,7 @@ export function Hero() {
               
               <button
                 onClick={(mouseEvent) => { mouseEvent.stopPropagation(); handleGalleryPagination(1); }}
-                className="absolute right-4 z-40 p-2 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green"
+                className="absolute right-2 md:right-4 z-40 p-1.5 md:p-2 rounded-full bg-black/20 md:bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green"
                 aria-label="View next showcase asset"
               >
                 <ChevronRight className="w-6 h-6" />

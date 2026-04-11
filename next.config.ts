@@ -11,7 +11,7 @@ const withMDX = createMDX({
 const nextConfig: NextConfig = {
   reactCompiler: true,
   pageExtensions: ["ts", "tsx", "mdx"],
-  // (The images section is gone now)
+  output: 'standalone',
 };
-
 export default withMDX(nextConfig);
+

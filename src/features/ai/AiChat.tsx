@@ -161,7 +161,7 @@ export function AiChat() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col items-end gap-2 md:gap-3">
       {/* Primary Interaction Interface */}
       <AnimatePresence>
         {isChatPanelOpen && (
@@ -171,8 +171,8 @@ export function AiChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="w-[360px] sm:w-[420px] rounded-3xl shadow-2xl overflow-hidden flex flex-col bg-white/10 backdrop-blur-lg border border-white/20 dark:bg-black/40 dark:border-white/10 ring-1 ring-black/5"
-            style={{ height: "600px" }}
+            className="w-[calc(100vw-32px)] sm:w-[420px] rounded-3xl shadow-2xl overflow-hidden flex flex-col bg-white/10 backdrop-blur-lg border border-white/20 dark:bg-black/40 dark:border-white/10 ring-1 ring-black/5"
+            style={{ height: "min(600px, 80vh)" }}
           >
             {/* Header Identity Bar */}
             <div className="px-5 py-4 bg-gradient-to-r from-brand-green/90 to-brand-green/70 backdrop-blur-md flex items-center justify-between flex-shrink-0 border-b border-white/10">
@@ -321,7 +321,7 @@ export function AiChat() {
         onClick={() => setIsChatPanelOpen((previousOpenState) => !previousOpenState)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="w-16 h-16 rounded-3xl bg-brand-green text-white shadow-2xl shadow-brand-green/40 flex items-center justify-center relative border border-white/20 focus:outline-none focus:ring-4 focus:ring-brand-green/30"
+        className="w-14 h-14 md:w-16 md:h-16 rounded-2xl md:rounded-3xl bg-brand-green text-white shadow-2xl shadow-brand-green/40 flex items-center justify-center relative border border-white/20 focus:outline-none focus:ring-4 focus:ring-brand-green/30"
         aria-label={isChatPanelOpen ? "Minimize AI interface" : "Activate AI interface"}
       >
         <AnimatePresence mode="wait" initial={false}>
@@ -333,7 +333,7 @@ export function AiChat() {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <X className="w-7 h-7" />
+              <X className="w-6 h-6 md:w-7 md:h-7" />
             </motion.span>
           ) : (
             <motion.span
@@ -343,7 +343,7 @@ export function AiChat() {
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <MessageCircle className="w-7 h-7" />
+              <MessageCircle className="w-6 h-6 md:w-7 md:h-7" />
             </motion.span>
           )}
         </AnimatePresence>

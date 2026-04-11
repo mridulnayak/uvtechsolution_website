@@ -28,10 +28,10 @@ export function WhatsAppButton() {
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-8 left-8 p-3 rounded-full bg-green-500 text-white shadow-lg z-50 hover:bg-green-600 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-deep-charcoal flex items-center justify-center group"
+      className="fixed bottom-4 left-4 md:bottom-8 md:left-8 p-2.5 md:p-3 rounded-full bg-green-500 text-white shadow-lg z-50 hover:bg-green-600 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-deep-charcoal flex items-center justify-center group"
       aria-label="Direct inquiry via WhatsApp"
     >
-      <MessageCircle className="w-7 h-7" />
+      <MessageCircle className="w-6 h-6 md:w-7 md:h-7" />
 
       {/* Narrative Engagement Tooltip */}
       <span className="absolute left-full ml-4 px-3 py-1.5 bg-deep-charcoal dark:bg-slate-white text-slate-white dark:text-deep-charcoal text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">
