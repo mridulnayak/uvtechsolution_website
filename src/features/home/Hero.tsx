@@ -79,8 +79,8 @@ export function Hero() {
 
   const prioritizedHeroHeadline = dynamicSiteConfig?.headline || (
     <>
-      Seamless Technology.<br className="hidden md:block" />
-      Enterprise Reach.<br className="hidden md:block" />
+      Seamless Technology. <br className="hidden md:block" />
+      Enterprise Reach. <br className="hidden md:block" />
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-lime-400">
         Global Standards.
       </span>
@@ -104,13 +104,13 @@ export function Hero() {
         </ScrollReveal>
 
         <ScrollReveal entranceDelay={0.12}>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-8 break-words leading-tight">
+          <h1 className="fluid-h1 font-black mb-8 [overflow-wrap:anywhere] [hyphens:auto]">
             {prioritizedHeroHeadline}
           </h1>
         </ScrollReveal>
 
         <ScrollReveal entranceDelay={0.2}>
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-medium">
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-medium break-words">
             {dynamicSiteConfig?.subtext || "UV Tech Solutions engineers high-performance, offline software ecosystems designed for mission-critical reliability in local enterprise environments."}
           </p>
         </ScrollReveal>

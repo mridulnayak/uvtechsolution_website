@@ -90,7 +90,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Navbar />
           
           {/* Principal application viewport */}
-          <main className="flex-1 mt-20 w-full overflow-hidden">
+          <main className="flex-1 mt-20 w-full overflow-x-hidden">
             {children}
           </main>
           

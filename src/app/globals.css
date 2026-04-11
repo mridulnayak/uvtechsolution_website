@@ -4,14 +4,12 @@
 /* 1. CORE DESIGN SYSTEM & VARIABLES                                          */
 /* -------------------------------------------------------------------------- */
 
-@theme {
+:root {
   --color-deep-charcoal: #050505;
   --color-brand-green: #82d91e;
   --color-slate-white: #F8FAFC;
   --radius-3xl: 24px;
-}
 
-:root {
   --background: var(--color-slate-white);
   --foreground: var(--color-deep-charcoal);
   
@@ -169,7 +167,8 @@ h1, h2, h3, h4, .font-black {
 /* Fluid Layout Controllers */
 .fluid-h1 {
   font-size: var(--font-fluid-h1);
-  line-height: 0.9;
+  line-height: 1.1;
+  text-wrap: balance;
 }
 
 .fluid-body {
