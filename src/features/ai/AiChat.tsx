@@ -171,7 +171,7 @@ export function AiChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="w-[calc(100vw-32px)] sm:w-[420px] rounded-3xl shadow-2xl overflow-hidden flex flex-col bg-[#0c1216] dark:bg-[#0a0a0a] backdrop-blur-lg border border-slate-800 dark:border-white/10 ring-1 ring-black/5"
+            className="w-[calc(100vw-32px)] sm:w-[420px] rounded-3xl shadow-2xl overflow-hidden flex flex-col bg-[#0a0a0a] backdrop-blur-lg border border-white/10 ring-1 ring-black/5"
             style={{ height: "min(600px, 80vh)" }}
           >
             {/* Header Identity Bar */}
@@ -214,7 +214,7 @@ export function AiChat() {
                     className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-sm ${
                       conversationMessage.role === "user"
                         ? "bg-brand-green text-white rounded-br-sm font-bold shadow-lg shadow-brand-green/20"
-                        : "bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-slate-50 rounded-bl-sm border border-slate-200 dark:border-white/5"
+                        : "bg-white/5 text-slate-50 rounded-bl-sm border border-white/5"
                     }`}
                   >
                     {conversationMessage.role === "model" 
@@ -238,7 +238,7 @@ export function AiChat() {
                   <div className="w-8 h-8 rounded-full bg-brand-green/20 border border-brand-green/30 flex items-center justify-center flex-shrink-0">
                     <Sparkles className="w-4 h-4 text-brand-green" />
                   </div>
-                  <div className="bg-white/80 dark:bg-white/5 px-4 py-3 rounded-2xl rounded-bl-sm flex flex-col gap-1 border border-gray-100 dark:border-white/5 shadow-sm">
+                  <div className="bg-white/5 px-4 py-3 rounded-2xl rounded-bl-sm flex flex-col gap-1 border border-white/5 shadow-sm">
                     <p className="text-[10px] text-brand-green font-medium animate-pulse">Gemini 3.1 Pro is thinking...</p>
                     <div className="flex gap-1.5 items-center">
                       <span className="w-1.5 h-1.5 bg-brand-green/40 rounded-full animate-bounce [animation-delay:0ms]" />
@@ -265,7 +265,7 @@ export function AiChat() {
             </div>
 
             {/* User Command Input Box */}
-            <div className="p-4 bg-white/5 dark:bg-black/20 backdrop-blur-xl border-t border-white/10 flex gap-3 flex-shrink-0 items-center">
+            <div className="p-4 bg-black/20 backdrop-blur-xl border-t border-white/10 flex gap-3 flex-shrink-0 items-center">
               <input
                 ref={textInputRef}
                 id="ai-chat-input"
@@ -274,7 +274,7 @@ export function AiChat() {
                 onChange={(keyboardEvent) => setChatInputValue(keyboardEvent.target.value)}
                 onKeyDown={handleKeyboardInputEvent}
                 placeholder="Submit your query..."
-                className="flex-1 bg-white/90 dark:bg-white/5 dark:text-white text-sm px-4 py-3 rounded-2xl border border-gray-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-green/50 transition-all placeholder:text-gray-400 dark:placeholder:text-white/20 shadow-inner"
+                className="flex-1 bg-white/5 text-white text-sm px-4 py-3 rounded-2xl border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-green/50 transition-all placeholder:text-white/20 shadow-inner"
                 disabled={isNetworkProcessing}
                 aria-label="Input chat message payload"
               />
@@ -308,7 +308,7 @@ export function AiChat() {
               handleDispatchMessage("Tell me about offline setup");
             }, 500);
           }}
-          className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md text-brand-green border border-brand-green/30 px-5 py-2.5 rounded-full text-xs font-bold shadow-xl flex items-center gap-2 mb-3 whitespace-nowrap ring-1 ring-black/5"
+          className="bg-gray-800/90 backdrop-blur-md text-brand-green border border-brand-green/30 px-5 py-2.5 rounded-full text-xs font-bold shadow-xl flex items-center gap-2 mb-3 whitespace-nowrap ring-1 ring-black/5"
         >
           <Sparkles className="w-3.5 h-3.5" />
           Enterprise Reliability AI
@@ -356,4 +356,3 @@ export function AiChat() {
     </div>
   );
 }
-

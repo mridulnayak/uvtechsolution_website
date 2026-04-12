@@ -81,7 +81,7 @@ export function BlogAiSummary({ content, title }: BlogAiSummaryProps) {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
-        className="relative rounded-2xl overflow-hidden border border-brand-green/20 bg-gradient-to-r from-brand-green/5 to-lime-400/5 dark:from-brand-green/10 dark:to-lime-400/10 p-5 mb-8"
+        className="relative rounded-2xl overflow-hidden border border-brand-green/20 bg-gradient-to-r from-brand-green/5 to-lime-400/5 from-brand-green/10 to-lime-400/10 p-5 mb-8"
       >
         {/* Accent structural border line */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-green to-lime-400 rounded-l-2xl shadow-[1px_0_10px_rgba(130,217,30,0.5)]" />
@@ -110,7 +110,7 @@ export function BlogAiSummary({ content, title }: BlogAiSummaryProps) {
               )}
               <button
                 onClick={() => setIsBannerDismissed(true)}
-                className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 transition-colors outline-none focus:ring-2 focus:ring-gray-400/50"
+                className="p-1.5 rounded-lg hover:bg-gray-100 hover:bg-gray-800 text-gray-400 transition-colors outline-none focus:ring-2 focus:ring-gray-400/50"
                 aria-label="Dismiss AI summary widget"
               >
                 <X className="w-3.5 h-3.5" />
@@ -126,11 +126,11 @@ export function BlogAiSummary({ content, title }: BlogAiSummaryProps) {
               <div className="h-3.5 w-3/5 rounded shimmer" />
             </div>
           ) : hasNetworkError ? (
-            <p className="text-sm text-gray-500 dark:text-gray-400 px-1">
+            <p className="text-sm text-gray-500 text-gray-400 px-1">
               Could not generate summary at this time. Click retry or proceed to read the full technical post below.
             </p>
           ) : (
-            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed px-1">
+            <p className="text-sm text-gray-700 text-gray-300 leading-relaxed px-1">
               {aiGeneratedSummary}
             </p>
           )}
@@ -139,3 +139,4 @@ export function BlogAiSummary({ content, title }: BlogAiSummaryProps) {
     </AnimatePresence>
   );
 }
+

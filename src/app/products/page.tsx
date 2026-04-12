@@ -107,13 +107,13 @@ export default function ProductsPage() {
         {/* Page Heading Section */}
         <ScrollReveal>
           <header id="products-header" className="text-center max-w-3xl mx-auto mb-24">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-white">
               Industry-Specific{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-emerald-400">
                 Software
               </span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-600 text-gray-300">
               Specialized digital tools engineered to solve the unique challenges of your business sector.
             </p>
           </header>
@@ -139,7 +139,7 @@ export default function ProductsPage() {
                     <HoverLift hoverIntensity="sm">
                       <button 
                         onClick={() => handleOpenLightbox(productItem.screenshots, 0)}
-                        className={`aspect-[16/10] w-full rounded-2xl bg-gradient-to-br ${productItem.themeColor} border border-gray-100 dark:border-gray-800 shadow-2xl relative overflow-hidden group text-left cursor-zoom-in`}
+                        className={`aspect-[16/10] w-full rounded-2xl bg-gradient-to-br ${productItem.themeColor} border border-gray-100 border-gray-800 shadow-2xl relative overflow-hidden group text-left cursor-zoom-in`}
                       >
                          {/* Main Dashboard Preview Wrapper */}
                          <div className="absolute inset-4 rounded-xl border border-white/20 bg-white/5 shadow-2xl overflow-hidden backdrop-blur-sm">
@@ -169,7 +169,7 @@ export default function ProductsPage() {
                          
                          {/* Metadata Label overlay */}
                          <div className="absolute bottom-8 left-8 flex items-center gap-2">
-                            <span className="px-3 py-1 bg-white/90 dark:bg-deep-charcoal/90 backdrop-blur rounded-full text-[10px] font-bold tracking-tight uppercase shadow-sm">
+                            <span className="px-3 py-1 bg-white/90 bg-deep-charcoal/90 backdrop-blur rounded-full text-[10px] font-bold tracking-tight uppercase shadow-sm">
                               Main Interface
                             </span>
                          </div>
@@ -182,7 +182,7 @@ export default function ProductsPage() {
                           <ScrollReveal key={imageIndex} entranceDelay={0.2 + imageIndex * 0.1} entryDirection="up">
                              <button 
                                 onClick={() => handleOpenLightbox(productItem.screenshots, imageIndex + 1)}
-                                className={`aspect-video w-full rounded-xl bg-gradient-to-br ${productItem.themeColor} border border-gray-100 dark:border-gray-800 overflow-hidden shadow-lg relative cursor-zoom-in group`}
+                                className={`aspect-video w-full rounded-xl bg-gradient-to-br ${productItem.themeColor} border border-gray-100 border-gray-800 overflow-hidden shadow-lg relative cursor-zoom-in group`}
                              >
                                 <Image 
                                    src={thumbnailUrl} 
@@ -217,24 +217,24 @@ export default function ProductsPage() {
                           <div className="inline-flex items-center px-4 py-1 rounded-full bg-brand-green/10 text-brand-green text-xs font-bold uppercase tracking-wider mb-2 w-fit">
                             {productItem.tagline}
                           </div>
-                          <h2 className="text-4xl md:text-5xl font-bold text-deep-charcoal dark:text-slate-white">
+                          <h2 className="text-4xl md:text-5xl font-bold text-deep-charcoal text-slate-white">
                             {productItem.name}
                           </h2>
                         </div>
                       </div>
 
-                      <p className="text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-medium">
+                      <p className="text-xl text-gray-600 text-gray-400 mb-10 leading-relaxed font-medium">
                         {productItem.description}
                       </p>
 
                       {/* Strategic Capabilities List */}
                       <div className="space-y-8 mb-12">
-                         <h4 className="text-sm font-bold text-deep-charcoal dark:text-slate-white uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 pb-2">Key Features</h4>
+                         <h4 className="text-sm font-bold text-deep-charcoal text-slate-white uppercase tracking-widest border-b border-gray-100 border-gray-800 pb-2">Key Features</h4>
                          <ul className="grid grid-cols-1 gap-4">
                           {productItem.features.map((featureDescription: string, featureIndex: number) => (
                             <li key={featureIndex} className="flex items-start gap-3">
                               <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" />
-                              <span className="text-gray-700 dark:text-gray-300 font-medium text-lg italic">
+                              <span className="text-gray-700 text-gray-300 font-medium text-lg italic">
                                 {featureDescription}
                               </span>
                             </li>
@@ -252,7 +252,7 @@ export default function ProductsPage() {
                         </Link>
                         <Link
                           href={`/contact?product=${productItem.id || productIndex}`}
-                          className="px-8 py-4 rounded-full border-2 border-gray-200 dark:border-gray-700 font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-center text-deep-charcoal dark:text-slate-white"
+                          className="px-8 py-4 rounded-full border-2 border-gray-200 border-gray-700 font-bold hover:bg-gray-50 hover:bg-gray-800 transition-colors text-center text-deep-charcoal text-slate-white"
                         >
                           {productItem.price === 0 || !productItem.price ? "Contact for Pricing" : "Book Demo"}
                         </Link>
@@ -267,15 +267,15 @@ export default function ProductsPage() {
 
         {/* Future-Focused Technology Roadmap */}
         <ScrollReveal>
-          <footer className="mt-32 p-12 bg-[#050505] dark:bg-white/5 border border-slate-800 dark:border-white/10 rounded-[2.5rem] relative overflow-hidden group">
+          <footer className="mt-32 p-12 bg-[#050505] bg-white/5 border border-slate-800 border-white/10 rounded-[2.5rem] relative overflow-hidden group">
             <div className="relative z-10 flex flex-col items-center text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 text-brand-green text-[10px] font-black uppercase tracking-[0.2em] mb-6">
                  Future Capabilities
               </div>
-              <h2 className="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tighter text-deep-charcoal dark:text-slate-white">
+              <h2 className="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tighter text-deep-charcoal text-slate-white">
                 Edge Diagnostic Integration <span className="text-gray-400 font-medium">(Coming Soon)</span>
               </h2>
-              <p className="max-w-2xl text-lg text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
+              <p className="max-w-2xl text-lg text-gray-500 text-slate-400 font-medium leading-relaxed">
                 Next-generation hardware telemetry and remote diagnostic heartbeats for offline nodes. Currently in private R&D for elite infrastructure partners.
               </p>
             </div>
@@ -292,4 +292,6 @@ export default function ProductsPage() {
     </div>
   );
 }
+
+
 

@@ -48,13 +48,13 @@ export function LogoMarquee() {
       ];
 
   return (
-    <section id="logo-marquee" className="py-12 bg-[#050505] overflow-hidden border-y border-slate-800 dark:border-white/5 transition-colors duration-300">
+    <section id="logo-marquee" className="py-12 bg-[#050505] overflow-hidden border-y border-white/5 transition-colors duration-300">
       <div className="relative">
         <div className="flex animate-marquee whitespace-nowrap" aria-label="Our Trusted Enterprise Clients">
           {loopedClientDataset.map((clientData, index) => (
             <div
               key={index}
-              className="mx-12 text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-700 hover:text-brand-green transition-colors cursor-default"
+              className="mx-12 text-2xl md:text-3xl font-bold text-slate-400 hover:text-brand-green transition-colors cursor-default"
             >
               <span>{clientData.name}</span>
             </div>

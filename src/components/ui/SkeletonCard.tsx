@@ -25,7 +25,7 @@ export function SkeletonCard({
   
   if (skeletonVariant === "blog") {
     return (
-      <div className={`rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 bg-white dark:bg-deep-charcoal ${className}`}>
+      <div className={`rounded-2xl overflow-hidden border border-white/5 bg-[#0a0a0a] ${className}`}>
         {/* Placeholder for the blog post hero image */}
         <div className="aspect-video w-full shimmer" />
         <div className="p-6 space-y-3">
@@ -42,7 +42,7 @@ export function SkeletonCard({
           <div className="h-3 w-full rounded shimmer" />
           <div className="h-3 w-2/3 rounded shimmer" />
           {/* Author avatar and name placeholders */}
-          <div className="flex items-center gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
+          <div className="flex items-center gap-2 pt-3 border-t border-white/5">
             <div className="w-8 h-8 rounded-full shimmer" />
             <div className="h-3 w-24 rounded shimmer" />
           </div>
@@ -89,7 +89,7 @@ export function SkeletonCard({
 
   // Default block-based text skeleton
   return (
-    <div className={`rounded-2xl p-6 border border-gray-100 dark:border-gray-800 space-y-3 ${className}`}>
+    <div className={`rounded-2xl p-6 border border-white/5 space-y-3 ${className}`}>
       <div className="h-4 w-full rounded shimmer" />
       <div className="h-4 w-4/5 rounded shimmer" />
       <div className="h-4 w-3/5 rounded shimmer" />

@@ -49,14 +49,14 @@ export function Workflow() {
   const activeEnterprisePartnersCount = 50;
 
   return (
-    <section id="hybrid-workflow" className="py-24 bg-[var(--background)] transition-colors duration-300">
+    <section id="hybrid-workflow" className="py-24 bg-[#050505] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-slate-950 dark:text-white tracking-tighter">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-white tracking-tighter">
               The Enterprise <span className="text-brand-green">Implementation</span>
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto font-semibold">
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto font-semibold">
               Bridging the digital and physical worlds for a seamless service experience.
             </p>
           </div>
@@ -64,7 +64,7 @@ export function Workflow() {
 
         <div className="relative">
           {/* Connector line mapping the pipeline (desktop viewport only) */}
-          <div className="hidden lg:block absolute top-12 left-1/2 -translate-x-1/2 w-[60%] h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent z-0" />
+          <div className="hidden lg:block absolute top-12 left-1/2 -translate-x-1/2 w-[60%] h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent z-0" />
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
             {CORE_IMPLEMENTATION_STEPS.map((pipelineStep, stepIndex) => (
@@ -75,7 +75,7 @@ export function Workflow() {
                      
                      {/* Directional arrow connecting linear steps */}
                      {stepIndex < CORE_IMPLEMENTATION_STEPS.length - 1 && (
-                        <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2 text-gray-300">
+                        <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2 text-gray-700">
                            <ArrowRight className="w-6 h-6" />
                         </div>
                      )}
@@ -84,16 +84,16 @@ export function Workflow() {
                      <div className="absolute -inset-2 bg-gradient-to-r from-brand-green/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   
-                  <h3 className="text-2xl font-black mb-4 text-slate-900 dark:text-white tracking-tight">
+                  <h3 className="text-2xl font-black mb-4 text-white tracking-tight">
                     {pipelineStep.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 max-w-[280px] font-medium leading-relaxed">
+                  <p className="text-slate-400 max-w-[280px] font-medium leading-relaxed">
                     {pipelineStep.description}
                   </p>
                   
                   {/* Final Step Call-to-Action Indicator */}
                   {stepIndex === 2 && (
-                    <div className="mt-6 px-4 py-2 bg-amber-500/10 rounded-full text-amber-600 dark:text-amber-400 text-sm font-semibold flex items-center gap-2 border border-amber-500/20 shadow-sm">
+                    <div className="mt-6 px-4 py-2 bg-amber-500/10 rounded-full text-amber-400 text-sm font-semibold flex items-center gap-2 border border-amber-500/20 shadow-sm">
                        <span className="relative flex h-2 w-2">
                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                          <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>

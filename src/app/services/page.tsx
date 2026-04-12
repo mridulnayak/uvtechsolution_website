@@ -197,7 +197,7 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <div className="bg-slate-white dark:bg-[#0a0f12] text-deep-charcoal dark:text-white min-h-screen pt-32 pb-24 transition-colors duration-300">
+    <div className="bg-[#050505] text-white min-h-screen pt-32 pb-24 transition-colors duration-300">
       
       {/* Decorative Background Elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -216,7 +216,7 @@ export default function ServicesPage() {
               Strategic <br />
               <span className="italic text-brand-green">Capabilities.</span>
             </h1>
-            <p className="max-w-xl text-lg md:text-xl text-gray-500 dark:text-slate-400 font-medium leading-relaxed">
+            <p className="max-w-xl text-lg md:text-xl text-slate-400 font-medium leading-relaxed">
               We provide enterprise-grade IT solutions specialized for hospitality, retail, and modern infrastructure engineering.
             </p>
           </header>
@@ -231,7 +231,7 @@ export default function ServicesPage() {
             return (
               <ScrollReveal key={service.id || serviceIndex} entranceDelay={serviceIndex * 0.05}>
                 <section 
-                  className={`group relative h-full bg-white dark:bg-[#080808] border border-gray-100 dark:border-white/5 p-8 rounded-3xl transition-all duration-300 hover:border-brand-green/40 hover:shadow-2xl hover:shadow-brand-green/10 inner-glow flex flex-col ${
+                  className={`group relative h-full bg-[#080808] border border-white/5 p-8 rounded-3xl transition-all duration-300 hover:border-brand-green/40 hover:shadow-2xl hover:shadow-brand-green/10 inner-glow flex flex-col ${
                     isWideLayout ? "lg:col-span-2" : "col-span-1"
                   }`}
                 >
@@ -243,13 +243,13 @@ export default function ServicesPage() {
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-500 dark:text-slate-400 text-sm font-medium leading-relaxed mb-8 flex-grow">
+                  <p className="text-slate-400 text-sm font-medium leading-relaxed mb-8 flex-grow">
                     {service.description}
                   </p>
 
                   <Link 
                     href="/contact" 
-                    className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 hover:text-brand-green transition-colors"
+                    className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-brand-green transition-colors"
                   >
                     Acquire Support <ArrowRight className="w-3 h-3" />
                   </Link>
@@ -266,8 +266,8 @@ export default function ServicesPage() {
 
         {/* Future Capabilities Teaser Section */}
         <ScrollReveal>
-          <div className="mt-32 p-12 bg-white dark:bg-[#080808] border border-gray-100 dark:border-white/5 rounded-[2.5rem] relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity">
+          <div className="mt-32 p-12 bg-[#080808] border border-white/5 rounded-[2.5rem] relative overflow-hidden group">
+            <div className="absolute top-0 right-0 p-8 opacity-[0.05] transition-opacity">
               <Cpu className="w-64 h-64 rotate-12" />
             </div>
             <div className="relative z-10">
@@ -276,16 +276,16 @@ export default function ServicesPage() {
                 Infrastructure Phase II
               </div>
               <h2 className="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tighter">
-                Edge Diagnostic Integration <span className="text-gray-400 font-medium">(Coming Soon)</span>
+                Edge Diagnostic Integration <span className="text-slate-400 font-medium">(Coming Soon)</span>
               </h2>
-              <p className="max-w-2xl text-lg text-gray-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
+              <p className="max-w-2xl text-lg text-slate-400 font-medium leading-relaxed mb-8">
                 Next-generation hardware telemetry and remote diagnostic heartbeats for offline nodes. Currently in private R&D for elite infrastructure partners.
               </p>
               <div className="flex gap-4">
-                <div className="px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold uppercase tracking-widest text-slate-500">
                   Private Beta
                 </div>
-                <div className="px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                <div className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold uppercase tracking-widest text-slate-500">
                   Enterprise Only
                 </div>
               </div>
@@ -295,13 +295,13 @@ export default function ServicesPage() {
 
         {/* Final CTA Section */}
         <ScrollReveal>
-          <footer className="mt-32 pt-20 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-12">
+          <footer className="mt-32 pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="max-w-2xl">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tighter uppercase italic leading-[1.1]">
                 Mission-Critical <br /> 
                 <span className="text-brand-green">Engineering.</span>
               </h2>
-              <p className="text-lg text-gray-500 dark:text-slate-400 font-medium">
+              <p className="text-lg text-slate-400 font-medium">
                 UV Tech Solutions doesn't just deploy—we engineer the resilience your business demands.
               </p>
             </div>

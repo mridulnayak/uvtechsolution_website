@@ -48,7 +48,7 @@ export function BackToTop() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={handleScrollToTop}
-          className="fixed bottom-8 right-8 p-3 rounded-full bg-brand-green text-white shadow-lg z-50 hover:bg-lime-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2 dark:focus:ring-offset-deep-charcoal"
+          className="fixed bottom-8 right-8 p-3 rounded-full bg-brand-green text-white shadow-lg z-50 hover:bg-lime-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2 focus:ring-offset-deep-charcoal"
           aria-label="Back to top"
         >
           <ChevronUp className="w-6 h-6" />
@@ -57,3 +57,4 @@ export function BackToTop() {
     </AnimatePresence>
   );
 }
+

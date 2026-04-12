@@ -5,7 +5,6 @@ import { Navbar } from "@/components/global/Navbar";
 import { Footer } from "@/components/global/Footer";
 import { BackToTop } from "@/components/global/BackToTop";
 import { WhatsAppButton } from "@/components/global/WhatsAppButton";
-import { ThemeProvider } from "@/components/global/ThemeProvider";
 import { ReadingProgressBar } from "@/components/global/ReadingProgressBar";
 import { AiChat } from "@/features/ai/AiChat";
 
@@ -82,25 +81,25 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${sansFontConfiguration.variable} font-sans antialiased min-h-screen flex flex-col bg-white dark:bg-[#050505] text-slate-900 dark:text-slate-50 transition-colors duration-300`}
+        className={`${sansFontConfiguration.variable} font-sans antialiased min-h-screen flex flex-col bg-[#050505] text-white transition-colors duration-300`}
       >
-        <ThemeProvider>
-          {/* Visual indicators and navigational overlays */}
-          <ReadingProgressBar />
-          <Navbar />
-          
-          {/* Principal application viewport */}
-          <main className="flex-1 mt-20 w-full overflow-x-hidden">
-            {children}
-          </main>
-          
-          {/* Global structural components and utility triggers */}
-          <Footer />
-          <BackToTop />
-          <WhatsAppButton />
-          <AiChat />
-        </ThemeProvider>
+        {/* Visual indicators and navigational overlays */}
+        <ReadingProgressBar />
+        <Navbar />
+        
+        {/* Principal application viewport */}
+        <main className="flex-1 mt-20 w-full overflow-x-hidden">
+          {children}
+        </main>
+        
+        {/* Global structural components and utility triggers */}
+        <Footer />
+        <BackToTop />
+        <WhatsAppButton />
+        <AiChat />
       </body>
     </html>
   );
 }
+
+

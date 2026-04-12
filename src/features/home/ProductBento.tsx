@@ -16,16 +16,16 @@ import { synchronizeProducts } from "@/lib/cms";
  */
 function DatabaseShimmerLoader() {
   return (
-    <div className="h-[480px] bg-[#0a0f12] dark:bg-deep-charcoal/50 rounded-3xl overflow-hidden border border-slate-800 dark:border-gray-800 animate-pulse">
-      <div className="h-[200px] w-full bg-gray-200 dark:bg-gray-800" />
+    <div className="h-[480px] bg-[#0a0f12] rounded-3xl overflow-hidden border border-white/10 animate-pulse">
+      <div className="h-[200px] w-full bg-gray-800" />
       <div className="p-8 space-y-4">
         <div className="flex gap-4 items-center">
-          <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800" />
-          <div className="h-6 w-32 bg-gray-200 dark:bg-gray-800 rounded" />
+          <div className="w-8 h-8 rounded-full bg-gray-800" />
+          <div className="h-6 w-32 bg-gray-800 rounded" />
         </div>
-        <div className="h-4 w-full bg-gray-200 dark:bg-gray-800 rounded" />
-        <div className="h-4 w-3/4 bg-gray-200 dark:bg-gray-800 rounded" />
-        <div className="mt-auto h-8 w-full bg-gray-200 dark:bg-gray-800 rounded" />
+        <div className="h-4 w-full bg-gray-800 rounded" />
+        <div className="h-4 w-3/4 bg-gray-800 rounded" />
+        <div className="mt-auto h-8 w-full bg-gray-800 rounded" />
       </div>
     </div>
   );
@@ -84,12 +84,12 @@ export function ProductBento() {
   }, []);
 
   return (
-    <section id="product-bento" className="py-20 bg-[#050505] dark:bg-black transition-colors duration-300">
+    <section id="product-bento" className="py-20 bg-[#050505] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 text-white">
             <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter">Precision Engineering</h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-400 max-w-2xl mx-auto">
               Explore our core software solutions designed for industry-specific excellence.
             </p>
           </div>
@@ -104,12 +104,12 @@ export function ProductBento() {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="group relative h-[480px] bg-[#0c1216] dark:bg-[#0a0a0a] rounded-3xl overflow-hidden border border-slate-800 dark:border-white/10 shadow-lg flex flex-col hover:shadow-2xl transition-all duration-300"
+                  className="group relative h-[480px] bg-[#0c1216] rounded-3xl overflow-hidden border border-white/10 shadow-lg flex flex-col hover:shadow-2xl transition-all duration-300"
                 >
                   {/* Software Window Visual Wrapper */}
                   <div className={`h-[200px] w-full bg-gradient-to-br ${activeModule.themeColor} relative overflow-hidden flex items-center justify-center p-6`}>
-                    <div className="w-full h-full rounded-xl border border-white/40 dark:border-white/10 bg-white/50 dark:bg-black/20 backdrop-blur-md shadow-2xl relative overflow-hidden flex flex-col">
-                      <div className="h-6 bg-white/30 dark:bg-black/20 border-b border-white/20 px-3 flex items-center gap-1.5 flex-shrink-0">
+                    <div className="w-full h-full rounded-xl border border-white/10 bg-black/20 backdrop-blur-md shadow-2xl relative overflow-hidden flex flex-col">
+                      <div className="h-6 bg-black/20 border-b border-white/20 px-3 flex items-center gap-1.5 flex-shrink-0">
                         <div className="w-2 h-2 rounded-full bg-red-400/50" />
                         <div className="w-2 h-2 rounded-full bg-amber-400/50" />
                         <div className="w-2 h-2 rounded-full bg-emerald-400/50" />
@@ -151,7 +151,7 @@ export function ProductBento() {
                   </div>
 
                   {/* Contextual Architecture Blueprint Content */}
-                  <div className="p-8 flex flex-col flex-grow">
+                  <div className="p-8 flex flex-col flex-grow text-white">
                     <div className="flex items-center gap-4 mb-4">
                       <ProductLogo
                         logoImageSource={activeModule.logo}
@@ -159,7 +159,7 @@ export function ProductBento() {
                         dimensionSize={32}
                       />
                       <div>
-                        <h3 className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
+                        <h3 className="text-xl font-black text-white uppercase tracking-tighter">
                           {activeModule.name}
                         </h3>
                         <div className="flex items-center gap-1.5 mt-1">
@@ -170,7 +170,7 @@ export function ProductBento() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm mb-6 line-clamp-2 font-semibold italic">
+                    <p className="text-slate-300 text-sm mb-6 line-clamp-2 font-semibold italic">
                       {activeModule.description}
                     </p>
 
@@ -184,7 +184,7 @@ export function ProductBento() {
                       </Link>
                       <Link
                         href={`/products#${activeModule.id}`}
-                        className={`w-10 h-10 rounded-full border border-gray-100 dark:border-gray-800 flex items-center justify-center text-gray-400 group-hover:text-white transition-all shadow-sm ${activeModule.name.toLowerCase().replace(/\s+/g, '').includes("hoteleo") ? 'group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:shadow-blue-600/20' :
+                        className={`w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center text-gray-400 group-hover:text-white transition-all shadow-sm ${activeModule.name.toLowerCase().replace(/\s+/g, '').includes("hoteleo") ? 'group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:shadow-blue-600/20' :
                             activeModule.name.toLowerCase().replace(/\s+/g, '').includes("restpro") ? 'group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:shadow-emerald-600/20' :
                               activeModule.name.toLowerCase().replace(/\s+/g, '').includes("retail") ? 'group-hover:bg-rose-600 group-hover:border-rose-600 group-hover:shadow-rose-600/20' :
                                 'group-hover:bg-brand-green group-hover:border-brand-green group-hover:shadow-brand-green/20'

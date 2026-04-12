@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/global/ThemeToggle";
 import { Logo } from "@/components/global/Logo";
 
 /**
@@ -53,7 +52,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 border-b",
         hasUserScrolled
-          ? "bg-white/90 dark:bg-[#050505]/90 backdrop-blur-md border-slate-200 dark:border-white/10 shadow-lg"
+          ? "bg-[#050505]/90 backdrop-blur-md border-white/10 shadow-lg"
           : "bg-transparent border-transparent"
       )}
     >
@@ -86,7 +85,7 @@ export function Navbar() {
                     "relative px-1 py-2 transition-colors",
                     isCurrentRoute
                       ? "text-brand-green"
-                      : "text-slate-900 dark:text-slate-100 hover:text-brand-green"
+                      : "text-slate-100 hover:text-brand-green"
                   )}
                 >
                   <span className="relative z-10 font-bold uppercase tracking-widest text-[10px] sm:text-xs">
@@ -106,7 +105,6 @@ export function Navbar() {
 
           {/* Desktop Utilities */}
           <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle />
             <Link
               href="/careers"
               className="text-brand-green border border-brand-green/30 hover:border-brand-green bg-brand-green/5 hover:bg-brand-green/10 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all"
@@ -123,10 +121,9 @@ export function Navbar() {
 
           {/* Mobile Utility Row (Visible on smaller viewports) */}
           <div className="md:hidden flex items-center gap-3">
-            <ThemeToggle />
             <button
               onClick={toggleMobileNavigation}
-              className="text-slate-900 dark:text-slate-100 p-2 transition-colors"
+              className="text-slate-100 p-2 transition-colors"
               aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -142,7 +139,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-[#050505] border-b border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl"
+            className="md:hidden bg-[#050505] border-b border-white/10 overflow-hidden shadow-2xl"
           >
             <div className="flex flex-col px-4 pt-4 pb-8 space-y-1">
               {APPLICATION_NAV_LINKS.map((navigationLink) => {
@@ -155,7 +152,7 @@ export function Navbar() {
                       "px-4 py-4 rounded-xl text-base font-bold transition-all uppercase tracking-wider",
                       isCurrentRoute
                         ? "bg-brand-green/10 text-brand-green"
-                        : "text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-white/5"
+                        : "text-slate-100 hover:bg-white/5"
                     )}
                   >
                     {navigationLink.name}
@@ -185,3 +182,4 @@ export function Navbar() {
     </header>
   );
 }
+

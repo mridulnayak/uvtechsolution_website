@@ -89,7 +89,7 @@ function PipelineProgressIndicator({ activeStageIndex, stageCount }: { activeSta
                 ? "bg-brand-green text-white shadow-lg shadow-brand-green/20"
                 : stageIndex === activeStageIndex
                 ? "bg-brand-green text-white ring-4 ring-brand-green/10"
-                : "bg-gray-100 dark:bg-white/5 text-gray-400"
+                : "bg-white/5 text-gray-400"
             }`}
           >
             {stageIndex < activeStageIndex ? <CheckCircle className="w-5 h-5 animate-pulse" /> : stageIndex + 1}
@@ -108,7 +108,7 @@ function PipelineProgressIndicator({ activeStageIndex, stageCount }: { activeSta
           {stageIndex < stageCount - 1 && (
             <div
               className={`flex-1 h-0.5 rounded-full transition-all duration-700 ${
-                stageIndex < activeStageIndex ? "bg-brand-green" : "bg-gray-200 dark:bg-white/5"
+                stageIndex < activeStageIndex ? "bg-brand-green" : "bg-gray-200 bg-white/5"
               }`}
             />
           )}
@@ -218,15 +218,15 @@ export default function ContactPage() {
    * Atomic utility for generating standardized form input styling states.
    */
   const generateInputStateClasses = useCallback((hasValidationAnomaly: boolean) => {
-    return `w-full px-5 py-4 rounded-2xl border bg-gray-50 focus:bg-white dark:bg-white/5 dark:focus:bg-deep-charcoal focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green/50 focus:outline-none transition-all duration-300 font-medium ${
-      hasValidationAnomaly ? "border-rose-500 shadow-sm shadow-rose-500/10" : "border-gray-200 dark:border-white/5"
+    return `w-full px-5 py-4 rounded-2xl border bg-gray-50 focus:bg-white/5 focus:bg-deep-charcoal focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green/50 focus:outline-none transition-all duration-300 font-medium ${
+      hasValidationAnomaly ? "border-rose-500 shadow-sm shadow-rose-500/10" : "border-white/5"
     }`;
   }, []);
 
   const semanticLabelClasses = "block text-xs font-black text-gray-400 uppercase tracking-[0.2em] mb-3 flex items-center gap-2";
 
   return (
-    <div className="py-20 lg:py-32 bg-slate-white dark:bg-deep-charcoal min-h-screen">
+    <div className="py-20 lg:py-32 bg-[#050505] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ─── Identity Header ────────────────────────────────────────── */}
@@ -237,7 +237,7 @@ export default function ContactPage() {
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 uppercase">
             Initiate <span className="text-brand-green">Contact.</span>
           </h1>
-          <p className="text-xl text-gray-500 dark:text-gray-400 font-medium italic">
+          <p className="text-xl text-gray-400 font-medium italic">
             Architecting the future of your local enterprise infrastructure through precision technical engineering.
           </p>
         </header>
@@ -246,8 +246,8 @@ export default function ContactPage() {
           
           {/* ─── Technical Support Hub ─────────────────────────────────────── */}
           <aside id="contact-technical-hub" className="lg:col-span-1 space-y-10">
-            <div className="bg-white dark:bg-white/5 p-10 rounded-[2.5rem] border border-gray-100 dark:border-white/5 shadow-2xl shadow-black/5">
-              <h3 className="text-xl font-black mb-10 text-deep-charcoal dark:text-slate-white uppercase tracking-tighter">
+            <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/5 shadow-2xl shadow-black/5">
+              <h3 className="text-xl font-black mb-10 text-deep-charcoal text-slate-white uppercase tracking-tighter">
                 Global Network Hub
               </h3>
               <div className="space-y-8">
@@ -292,12 +292,12 @@ export default function ContactPage() {
                       {href ? (
                         <a
                           href={href}
-                          className="text-lg font-bold text-deep-charcoal dark:text-slate-white hover:text-brand-green transition-colors whitespace-pre-line leading-snug"
+                          className="text-lg font-bold text-deep-charcoal text-slate-white hover:text-brand-green transition-colors whitespace-pre-line leading-snug"
                         >
                           {value}
                         </a>
                       ) : (
-                        <p className="text-lg font-bold text-deep-charcoal dark:text-slate-white whitespace-pre-line leading-snug">
+                        <p className="text-lg font-bold text-deep-charcoal text-slate-white whitespace-pre-line leading-snug">
                           {value}
                         </p>
                       )}
@@ -321,7 +321,7 @@ export default function ContactPage() {
 
           {/* ─── Implementation Pipeline ─────────────────────────────────────── */}
           <main id="contact-pipeline-container" className="lg:col-span-2">
-            <div className="bg-white dark:bg-white/5 rounded-[3rem] p-10 md:p-16 border border-gray-100 dark:border-white/5 shadow-2xl shadow-black/5 relative overflow-hidden min-h-[600px] flex flex-col justify-center">
+            <div className="bg-white/5 rounded-[3rem] p-10 md:p-16 border border-white/5 shadow-2xl shadow-black/5 relative overflow-hidden min-h-[600px] flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 
                 {/* ── Phase 0: Identity Verification ─────────────────────────── */}
@@ -430,9 +430,9 @@ export default function ContactPage() {
                     </div>
 
                     {systemFailureMessage && (
-                      <div className="mb-8 p-6 rounded-2xl bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/30 flex items-start gap-4">
+                      <div className="mb-8 p-6 rounded-2xl bg-rose-50 bg-rose-950/20 border border-rose-200 border-rose-900/30 flex items-start gap-4">
                         <AlertCircle className="w-6 h-6 text-rose-500 flex-shrink-0 mt-0.5" />
-                        <p className="text-sm font-bold text-rose-600 dark:text-rose-400 italic">
+                        <p className="text-sm font-bold text-rose-600 text-rose-400 italic">
                           {systemFailureMessage}
                         </p>
                       </div>
@@ -507,7 +507,7 @@ export default function ContactPage() {
                           type="button"
                           onClick={() => setActivePipelineStageIndex(0)}
                           id="contact-pipeline-revert-btn"
-                          className="px-8 py-4 rounded-xl border border-gray-200 dark:border-white/5 font-black uppercase text-[10px] tracking-widest hover:bg-gray-50 dark:hover:bg-white/5 transition-all flex items-center gap-3"
+                          className="px-8 py-4 rounded-xl border border-white/5 font-black uppercase text-[10px] tracking-widest hover:bg-gray-50 hover:bg-white/5 transition-all flex items-center gap-3"
                         >
                           <ArrowLeft className="w-4 h-4" /> Identity Re-Sync
                         </button>
@@ -553,7 +553,7 @@ export default function ContactPage() {
 
                     <div className="space-y-4">
                       <h3 className="text-4xl font-black uppercase tracking-tighter">Transmission Confirmed.</h3>
-                      <p className="text-gray-500 dark:text-gray-400 font-medium italic max-w-sm">
+                      <p className="text-gray-400 font-medium italic max-w-sm">
                         Inquiry payload successfully decrypted at our HQ. A specialized diagnostic team will respond within 24 operational hours.
                       </p>
                     </div>
@@ -564,7 +564,7 @@ export default function ContactPage() {
                         inquiryFormEngine.reset();
                         setActivePipelineStageIndex(0);
                       }}
-                      className="px-10 py-4 rounded-full bg-gray-100 dark:bg-white/5 font-black uppercase text-[10px] tracking-widest hover:bg-brand-green hover:text-white transition-all duration-300 shadow-sm"
+                      className="px-10 py-4 rounded-full bg-white/5 font-black uppercase text-[10px] tracking-widest hover:bg-brand-green hover:text-white transition-all duration-300 shadow-sm"
                     >
                       Initialize New Transmission
                     </button>
@@ -578,3 +578,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+

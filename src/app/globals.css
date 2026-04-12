@@ -10,20 +10,13 @@
   --color-slate-white: #F8FAFC;
   --radius-3xl: 24px;
 
-  /* Force a dark-first theme by default while allowing subtle system transitions */
-  --background: #0a0f12; 
-  --foreground: var(--color-slate-white);
+  /* Forced High-Contrast Dark Theme */
+  --background: #050505; 
+  --foreground: #ffffff;
   
   /* Responsive Fluid Typography Tokens */
   --font-fluid-h1: clamp(2.5rem, 8vw + 1rem, 6rem);
   --font-fluid-body: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #050505;
-    --foreground: #ffffff;
-  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -86,17 +79,6 @@ h1, h2, h3, h4, .font-black {
 .shimmer {
   background: linear-gradient(
     90deg,
-    rgba(200, 200, 200, 0.15) 25%,
-    rgba(200, 200, 200, 0.35) 50%,
-    rgba(200, 200, 200, 0.15) 75%
-  );
-  background-size: 800px 100%;
-  animation: shimmer 1.6s infinite linear;
-}
-
-.dark .shimmer {
-  background: linear-gradient(
-    90deg,
     rgba(255, 255, 255, 0.04) 25%,
     rgba(255, 255, 255, 0.10) 50%,
     rgba(255, 255, 255, 0.04) 75%
@@ -145,11 +127,6 @@ h1, h2, h3, h4, .font-black {
 .glass-light {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.dark .glass-light {
   background: rgba(26, 26, 26, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -176,3 +153,4 @@ h1, h2, h3, h4, .font-black {
   font-size: var(--font-fluid-body);
   line-height: 1.6;
 }
+

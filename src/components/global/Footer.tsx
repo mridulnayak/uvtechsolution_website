@@ -69,7 +69,7 @@ export function Footer() {
   ];
 
   return (
-    <footer id="global-footer" className="bg-[#050505] text-slate-100 dark:text-white border-t border-slate-800 dark:border-white/5 selection:bg-brand-green/30 px-4 md:px-0">
+    <footer id="global-footer" className="bg-[#050505] text-white border-t border-white/5 selection:bg-brand-green/30 px-4 md:px-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           
@@ -95,7 +95,7 @@ export function Footer() {
                 </div>
               </div>
             </Link>
-            <p className="text-slate-600 dark:text-slate-400 text-sm mb-8 leading-relaxed font-semibold">
+            <p className="text-slate-400 text-sm mb-8 leading-relaxed font-semibold">
               Engineering high-performance, offline software ecosystems designed for mission-critical reliability in local enterprise environments.
             </p>
             <nav className="flex space-x-4">
@@ -106,7 +106,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className={`text-gray-400 dark:text-slate-500 ${platform.hoverColor} transition-colors p-2 rounded-xl bg-gray-50 dark:bg-white/5 ring-1 ring-gray-200 dark:ring-white/10`}
+                  className={`text-slate-500 ${platform.hoverColor} transition-colors p-2 rounded-xl bg-white/5 ring-1 ring-white/10`}
                   aria-label={`Connect with us on ${platform.name}`}
                 >
                   <platform.icon className="w-5 h-5" />
@@ -121,7 +121,7 @@ export function Footer() {
             <ul className="space-y-4">
               {capabilityPillars.map((capabilityItem, capabilityIndex) => (
                 <li key={capabilityIndex}>
-                  <Link href="/services" className="text-sm text-gray-500 dark:text-slate-400 hover:text-brand-green transition-colors font-medium">
+                  <Link href="/services" className="text-sm text-slate-400 hover:text-brand-green transition-colors font-medium">
                     {capabilityItem}
                   </Link>
                 </li>
@@ -137,7 +137,7 @@ export function Footer() {
                 <li key={navigationIndex}>
                   <Link 
                     href={navigationLink.path} 
-                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-green transition-colors font-bold uppercase tracking-wider text-[11px]"
+                    className="text-sm text-slate-400 hover:text-brand-green transition-colors font-bold uppercase tracking-wider text-[11px]"
                   >
                     {navigationLink.label}
                   </Link>
@@ -152,17 +152,17 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-sm">
                 <Mail className="w-4 h-4 text-brand-green" />
-                <a href="mailto:support@uvtechsolutions.in" className="font-medium text-gray-600 dark:text-slate-200 hover:text-brand-green transition-colors">
+                <a href="mailto:support@uvtechsolutions.in" className="font-medium text-slate-200 hover:text-brand-green transition-colors">
                   support@uvtechsolutions.in
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-gray-500 dark:text-slate-400">
+              <li className="flex items-center gap-3 text-sm text-slate-400">
                 <Phone className="w-4 h-4 text-brand-green" />
                 <span className="font-medium">+91-771-2274930 (Global HQ)</span>
               </li>
-              <li className="mt-8 p-6 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-3xl">
+              <li className="mt-8 p-6 bg-white/5 border border-white/10 rounded-3xl">
                 <span className="block font-black text-brand-green mb-2 tracking-widest uppercase text-[10px]">Global Operations</span>
-                <span className="text-xs text-gray-500 dark:text-slate-300 leading-relaxed font-medium">
+                <span className="text-xs text-slate-300 leading-relaxed font-medium">
                   Distributed Engineering Teams<br />
                   Worldwide Support Infrastructure
                 </span>
@@ -172,15 +172,15 @@ export function Footer() {
         </div>
 
         {/* Global Copyright & Legal Footer */}
-        <div className="mt-20 pt-8 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-slate-600">
+        <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-600">
             © {new Date().getFullYear()} UV Tech Solutions. Infrastructure for the Infinite Enterprise.
           </p>
           <nav className="flex gap-6" aria-label="Legal navigation">
-            <Link href="/privacy-policy" className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-slate-600 hover:text-brand-green transition-colors">
+            <Link href="/privacy-policy" className="text-[10px] font-bold uppercase tracking-widest text-slate-600 hover:text-brand-green transition-colors">
               Privacy
             </Link>
-            <Link href="/terms-of-service" className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-slate-600 hover:text-brand-green transition-colors">
+            <Link href="/terms-of-service" className="text-[10px] font-bold uppercase tracking-widest text-slate-600 hover:text-brand-green transition-colors">
               Terms
             </Link>
           </nav>

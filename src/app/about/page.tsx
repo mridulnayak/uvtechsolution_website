@@ -75,7 +75,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pb-20 lg:pb-32 bg-slate-white dark:bg-deep-charcoal text-deep-charcoal dark:text-slate-white transition-colors duration-300">
+    <div className="pb-20 lg:pb-32 bg-[#050505] text-deep-charcoal text-slate-white transition-colors duration-300">
       
       {/* ─── Mission Narrative Section ────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 overflow-hidden">
@@ -93,7 +93,7 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
               Engineering <br /> <span className="text-brand-green tracking-tighter">Mission-Critical Resilience.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed mb-12 font-medium">
+            <p className="text-xl md:text-2xl text-gray-600 text-gray-400 leading-relaxed mb-12 font-medium">
               UV Tech Solutions engineers high-performance, offline software ecosystems designed for absolute reliability in hyper-local enterprise environments.
             </p>
           </motion.div>
@@ -108,15 +108,15 @@ export default function AboutPage() {
             {reachMetrics.map((activeMetric, index) => (
               <div 
                 key={index} 
-                className="bg-white/50 dark:bg-slate-800/50 backdrop-blur-xl border border-gray-200 dark:border-white/10 p-8 rounded-3xl text-center group hover:border-brand-green/50 transition-all duration-300"
+                className="bg-white/50 bg-slate-800/50 backdrop-blur-xl border border-gray-200 border-white/10 p-8 rounded-3xl text-center group hover:border-brand-green/50 transition-all duration-300"
               >
                 <div className="flex justify-center mb-4 text-brand-green group-hover:scale-110 transition-transform duration-300">
                   {activeMetric.metricIcon}
                 </div>
-                <div className="text-4xl font-black text-deep-charcoal dark:text-white mb-2">
+                <div className="text-4xl font-black text-deep-charcoal text-white mb-2">
                   {activeMetric.metricValue}
                 </div>
-                <div className="text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                <div className="text-sm font-bold uppercase tracking-widest text-slate-500 text-slate-400">
                   {activeMetric.metricLabel}
                 </div>
               </div>
@@ -139,10 +139,10 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-5xl font-black tracking-tight uppercase">
                 Rooted in <span className="text-brand-green">Software Excellence.</span>
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-600 text-gray-400 leading-relaxed">
                 Founded to bridge the gap between world-class engineering standards and the specialized needs of global service industries. 
               </p>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed italic border-l-4 border-brand-green pl-6 py-2 bg-brand-green/5">
+              <p className="text-lg text-gray-600 text-gray-400 leading-relaxed italic border-l-4 border-brand-green pl-6 py-2 bg-brand-green/5">
                 With deep domain expertise in systems architecture, our team engineers robust products that scale seamlessly within local infrastructure boundaries.
               </p>
               
@@ -167,11 +167,11 @@ export default function AboutPage() {
               {foundationalPrinciples.map((activePrinciple, index) => (
                 <div 
                   key={index} 
-                  className={`bg-white dark:bg-slate-900 border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl hover:shadow-brand-green/5 hover:border-brand-green/30 transition-all duration-300 ${index === 2 ? 'sm:col-span-2' : ''}`}
+                  className={`bg-white bg-slate-900 border border-white/5 p-8 rounded-3xl hover:shadow-xl hover:shadow-brand-green/5 hover:border-brand-green/30 transition-all duration-300 ${index === 2 ? 'sm:col-span-2' : ''}`}
                 >
                   <div className="text-brand-green mb-6">{activePrinciple.valueIcon}</div>
                   <h3 className="text-xl font-extrabold mb-4 uppercase tracking-tighter">{activePrinciple.valueTitle}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{activePrinciple.valueDescription}</p>
+                  <p className="text-gray-600 text-gray-400 text-sm leading-relaxed">{activePrinciple.valueDescription}</p>
                 </div>
               ))}
             </motion.div>
@@ -208,4 +208,6 @@ export default function AboutPage() {
     </div>
   );
 }
+
+
 
