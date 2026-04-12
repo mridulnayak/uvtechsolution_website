@@ -31,27 +31,18 @@ export function Navbar() {
   const currentPathname = usePathname();
 
   useEffect(() => {
-    /**
-     * Updates the scrolled state when the user moves past a specific pixel threshold.
-     */
     const handleNavigationScrollPosition = () => {
       setHasUserScrolled(window.scrollY > 20);
     };
-    
+
     window.addEventListener("scroll", handleNavigationScrollPosition, { passive: true });
     return () => window.removeEventListener("scroll", handleNavigationScrollPosition);
   }, []);
 
-  /**
-   * Closes the mobile navigation menu on route transitions.
-   */
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [currentPathname]);
 
-  /**
-   * Toggles the visibility state of the mobile-specific navigation overlay.
-   */
   const toggleMobileNavigation = useCallback(() => {
     setIsMobileMenuOpen((previousState) => !previousState);
   }, []);
@@ -62,33 +53,24 @@ export function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 border-b",
         hasUserScrolled
-          ? "bg-[#0a0f12]/80 dark:bg-[#050505]/80 backdrop-blur-md border-slate-800 dark:border-white/10 shadow-lg"
+          ? "bg-white/90 dark:bg-[#050505]/90 backdrop-blur-md border-slate-200 dark:border-white/10 shadow-lg"
           : "bg-transparent border-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          
+
           {/* Brand Identity / Logo Slot */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <Image 
-                src="/images/logos/logo.png" 
-                alt="UV Tech Solutions Navigation Logo" 
-                width={120} 
-                height={40} 
-                className="object-contain group-hover:scale-105 transition-transform opacity-0 data-[loaded=true]:opacity-100"
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
+            <div className="relative w-28 md:w-32">
+              <Image
+                src="/images/logos/logo.png"
+                alt="UV Tech Solutions Navigation Logo"
+                width={120}
+                height={40}
+                className="object-contain group-hover:scale-105 transition-transform"
                 priority
-                onLoad={(loadEvent) => (loadEvent.target as HTMLImageElement).setAttribute("data-loaded", "true")}
-                onError={(errorEvent) => {
-                  (errorEvent.target as HTMLImageElement).style.display = 'none';
-                  const svgFallbackElement = (errorEvent.target as HTMLElement).parentElement?.querySelector('.logo-fallback');
-                  if (svgFallbackElement) svgFallbackElement.classList.remove('hidden');
-                }}
               />
-              <div className="logo-fallback hidden">
-                 <Logo className="w-10 h-10 text-brand-green" />
-              </div>
             </div>
           </Link>
 
@@ -122,13 +104,12 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Navigational Utilities & Global Actions */}
+          {/* Desktop Utilities */}
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-
             <Link
               href="/careers"
-              className="text-brand-green border border-brand-green/30 hover:border-brand-green bg-brand-green/5 hover:bg-brand-green/10 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all hover:shadow-[0_0_15px_rgba(143,203,39,0.2)]"
+              className="text-brand-green border border-brand-green/30 hover:border-brand-green bg-brand-green/5 hover:bg-brand-green/10 px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all"
             >
               Join Our Team
             </Link>
@@ -145,9 +126,8 @@ export function Navbar() {
             <ThemeToggle />
             <button
               onClick={toggleMobileNavigation}
-              className="text-gray-600 dark:text-gray-300 hover:text-brand-green p-2 transition-colors"
+              className="text-slate-900 dark:text-slate-100 p-2 transition-colors"
               aria-expanded={isMobileMenuOpen}
-              aria-label="Toggle mobile navigation menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -155,17 +135,16 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer Overlay */}
+      {/* Mobile Drawer Overlay - FIXED COLORS FOR VISIBILITY */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.nav
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-deep-charcoal border-b border-gray-100 dark:border-white/5 overflow-hidden"
-            aria-label="Mobile Global Navigation"
+            className="md:hidden bg-white dark:bg-[#050505] border-b border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl"
           >
-            <div className="flex flex-col px-4 pt-2 pb-6 space-y-1">
+            <div className="flex flex-col px-4 pt-4 pb-8 space-y-1">
               {APPLICATION_NAV_LINKS.map((navigationLink) => {
                 const isCurrentRoute = currentPathname === navigationLink.href;
                 return (
@@ -173,28 +152,28 @@ export function Navbar() {
                     key={navigationLink.name}
                     href={navigationLink.href}
                     className={cn(
-                      "px-4 py-3 rounded-lg text-base font-medium transition-colors",
+                      "px-4 py-4 rounded-xl text-base font-bold transition-all uppercase tracking-wider",
                       isCurrentRoute
                         ? "bg-brand-green/10 text-brand-green"
-                        : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5"
+                        : "text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-white/5"
                     )}
                   >
                     {navigationLink.name}
                   </Link>
                 );
               })}
-              
-              {/* Mobile Primary Actions */}
-              <div className="pt-4 pb-2 px-4 space-y-3">
+
+              {/* Mobile Actions */}
+              <div className="pt-6 pb-2 px-4 space-y-4">
                 <Link
                   href="/careers"
-                  className="block w-full text-center text-brand-green border border-brand-green/20 bg-brand-green/5 px-5 py-3 rounded-xl font-bold uppercase tracking-wider text-sm transition-all"
+                  className="block w-full text-center text-brand-green border border-brand-green/20 bg-brand-green/5 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all"
                 >
                   Join Our Team
                 </Link>
                 <Link
                   href="/contact"
-                  className="block w-full text-center bg-brand-green text-white px-5 py-3 rounded-xl font-bold uppercase tracking-wider text-sm shadow-lg shadow-brand-green/20"
+                  className="block w-full text-center bg-brand-green text-white py-4 rounded-2xl font-black uppercase tracking-widest text-xs shadow-lg shadow-brand-green/20"
                 >
                   Consult Now
                 </Link>
