@@ -16,7 +16,7 @@ import { synchronizeProducts } from "@/lib/cms";
  */
 function DatabaseShimmerLoader() {
   return (
-    <div className="h-[480px] bg-white dark:bg-deep-charcoal/50 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800 animate-pulse">
+    <div className="h-[480px] bg-[#0a0f12] dark:bg-deep-charcoal/50 rounded-3xl overflow-hidden border border-slate-800 dark:border-gray-800 animate-pulse">
       <div className="h-[200px] w-full bg-gray-200 dark:bg-gray-800" />
       <div className="p-8 space-y-4">
         <div className="flex gap-4 items-center">
@@ -84,7 +84,7 @@ export function ProductBento() {
   }, []);
 
   return (
-    <section id="product-bento" className="py-20 bg-gray-50 dark:bg-deep-charcoal/30">
+    <section id="product-bento" className="py-20 bg-[#050505] dark:bg-black transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -104,7 +104,7 @@ export function ProductBento() {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="group relative h-[480px] bg-white dark:bg-deep-charcoal rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col hover:shadow-xl transition-all duration-300"
+                  className="group relative h-[480px] bg-[#0c1216] dark:bg-[#0a0a0a] rounded-3xl overflow-hidden border border-slate-800 dark:border-white/10 shadow-lg flex flex-col hover:shadow-2xl transition-all duration-300"
                 >
                   {/* Software Window Visual Wrapper */}
                   <div className={`h-[200px] w-full bg-gradient-to-br ${activeModule.themeColor} relative overflow-hidden flex items-center justify-center p-6`}>
@@ -159,7 +159,7 @@ export function ProductBento() {
                         dimensionSize={32}
                       />
                       <div>
-                        <h3 className="text-xl font-black text-deep-charcoal dark:text-slate-white uppercase tracking-tighter">
+                        <h3 className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
                           {activeModule.name}
                         </h3>
                         <div className="flex items-center gap-1.5 mt-1">
@@ -170,7 +170,7 @@ export function ProductBento() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-2 font-medium italic">
+                    <p className="text-slate-600 dark:text-slate-300 text-sm mb-6 line-clamp-2 font-semibold italic">
                       {activeModule.description}
                     </p>
 

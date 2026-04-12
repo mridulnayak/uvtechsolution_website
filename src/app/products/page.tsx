@@ -107,9 +107,9 @@ export default function ProductsPage() {
         {/* Page Heading Section */}
         <ScrollReveal>
           <header id="products-header" className="text-center max-w-3xl mx-auto mb-24">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
               Industry-Specific{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-teal-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-emerald-400">
                 Software
               </span>
             </h1>
@@ -267,7 +267,7 @@ export default function ProductsPage() {
 
         {/* Future-Focused Technology Roadmap */}
         <ScrollReveal>
-          <footer className="mt-32 p-12 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-[2.5rem] relative overflow-hidden group">
+          <footer className="mt-32 p-12 bg-[#050505] dark:bg-white/5 border border-slate-800 dark:border-white/10 rounded-[2.5rem] relative overflow-hidden group">
             <div className="relative z-10 flex flex-col items-center text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 text-brand-green text-[10px] font-black uppercase tracking-[0.2em] mb-6">
                  Future Capabilities

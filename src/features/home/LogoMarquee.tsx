@@ -48,13 +48,13 @@ export function LogoMarquee() {
       ];
 
   return (
-    <section id="logo-marquee" className="py-12 bg-white dark:bg-deep-charcoal overflow-hidden border-y border-gray-100 dark:border-white/5 transition-colors duration-300">
+    <section id="logo-marquee" className="py-12 bg-[#050505] overflow-hidden border-y border-slate-800 dark:border-white/5 transition-colors duration-300">
       <div className="relative">
         <div className="flex animate-marquee whitespace-nowrap" aria-label="Our Trusted Enterprise Clients">
           {loopedClientDataset.map((clientData, index) => (
             <div
               key={index}
-              className="mx-12 text-2xl md:text-3xl font-bold text-gray-200 dark:text-gray-800 hover:text-brand-green transition-colors cursor-default"
+              className="mx-12 text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-700 hover:text-brand-green transition-colors cursor-default"
             >
               <span>{clientData.name}</span>
             </div>
@@ -64,8 +64,8 @@ export function LogoMarquee() {
         {/* Note: The animate-marquee keyframes reside in globals.css to bypass styled-jsx hydration mismatches */}
 
         {/* Subtle gradient masks for smooth edge fade-out transitions */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white dark:from-deep-charcoal to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white dark:from-deep-charcoal to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   );

@@ -81,14 +81,14 @@ export function Hero() {
     <>
       Seamless Technology. <br className="hidden md:block" />
       Enterprise Reach. <br className="hidden md:block" />
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-lime-400">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-emerald-300">
         Global Standards.
       </span>
     </>
   );
 
   return (
-    <section id="home-hero" className="relative w-full py-16 md:py-32 xl:py-40 flex items-center justify-center overflow-hidden bg-white dark:bg-[#050505] transition-colors duration-300">
+    <section id="home-hero" className="relative w-full py-20 lg:py-40 flex items-center justify-center overflow-x-hidden bg-[var(--background)] transition-colors duration-300">
       {/* Structural Abstract Infrastructure Overlay */}
       <div className="absolute inset-0 grid-bg opacity-[0.15] pointer-events-none" />
       
@@ -97,20 +97,20 @@ export function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <ScrollReveal entranceDelay={0.05}>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-deep-charcoal/5 dark:bg-slate-white/5 border border-deep-charcoal/10 dark:border-slate-white/10 text-sm font-medium mb-8 shadow-sm">
-            <span className="flex h-2 w-2 rounded-full bg-brand-green animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs md:text-sm font-bold mb-8 shadow-sm text-slate-900 dark:text-slate-50 uppercase tracking-tighter">
+            <span className="flex h-2 w-2 rounded-full bg-brand-green animate-pulse shadow-[0_0_10px_rgba(130,217,30,0.8)]" />
             {dynamicSiteConfig?.badge || "Enterprise Infrastructure"}
           </div>
         </ScrollReveal>
 
         <ScrollReveal entranceDelay={0.12}>
-          <h1 className="fluid-h1 font-black mb-8 [overflow-wrap:anywhere] [hyphens:auto]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 [overflow-wrap:anywhere] [hyphens:auto] text-slate-950 dark:text-white leading-[0.9] tracking-tighter">
             {prioritizedHeroHeadline}
           </h1>
         </ScrollReveal>
 
         <ScrollReveal entranceDelay={0.2}>
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed font-medium break-words">
+          <p className="max-w-3xl mx-auto text-lg md:text-xl xl:text-2xl text-slate-600 dark:text-slate-300 mb-10 leading-relaxed font-semibold break-words">
             {dynamicSiteConfig?.subtext || "UV Tech Solutions engineers high-performance, offline software ecosystems designed for mission-critical reliability in local enterprise environments."}
           </p>
         </ScrollReveal>
@@ -135,7 +135,7 @@ export function Hero() {
           <div className="relative max-w-5xl mx-auto group">
             <div className="absolute inset-0 bg-gradient-to-b from-brand-green/20 to-transparent blur-3xl rounded-full -z-10" />
             
-            <div className="glass rounded-2xl border border-white/20 dark:border-white/10 p-2 md:p-4 shadow-2xl overflow-hidden aspect-video flex items-center justify-center bg-gray-50/50 dark:bg-deep-charcoal/50 backdrop-blur-xl relative">
+            <div className="glass rounded-2xl border border-white/10 p-2 md:p-4 shadow-2xl overflow-hidden aspect-video flex items-center justify-center bg-black/20 backdrop-blur-xl relative">
               <button
                 onClick={(mouseEvent) => { mouseEvent.stopPropagation(); handleGalleryPagination(-1); }}
                 className="absolute left-2 md:left-4 z-40 p-1.5 md:p-2 rounded-full bg-black/20 md:bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green"

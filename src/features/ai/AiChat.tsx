@@ -171,7 +171,7 @@ export function AiChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="w-[calc(100vw-32px)] sm:w-[420px] rounded-3xl shadow-2xl overflow-hidden flex flex-col bg-white/10 backdrop-blur-lg border border-white/20 dark:bg-black/40 dark:border-white/10 ring-1 ring-black/5"
+            className="w-[calc(100vw-32px)] sm:w-[420px] rounded-3xl shadow-2xl overflow-hidden flex flex-col bg-[#0c1216] dark:bg-[#0a0a0a] backdrop-blur-lg border border-slate-800 dark:border-white/10 ring-1 ring-black/5"
             style={{ height: "min(600px, 80vh)" }}
           >
             {/* Header Identity Bar */}
@@ -213,8 +213,8 @@ export function AiChat() {
                   <div
                     className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-sm ${
                       conversationMessage.role === "user"
-                        ? "bg-brand-green text-white rounded-br-sm font-medium"
-                        : "bg-white/90 dark:bg-white/10 dark:text-white dark:backdrop-blur-sm text-gray-800 rounded-bl-sm border border-gray-100 dark:border-white/5"
+                        ? "bg-brand-green text-white rounded-br-sm font-bold shadow-lg shadow-brand-green/20"
+                        : "bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-slate-50 rounded-bl-sm border border-slate-200 dark:border-white/5"
                     }`}
                   >
                     {conversationMessage.role === "model" 

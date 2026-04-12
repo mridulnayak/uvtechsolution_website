@@ -82,7 +82,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${sansFontConfiguration.variable} font-sans antialiased min-h-screen flex flex-col bg-slate-white dark:bg-deep-charcoal text-deep-charcoal dark:text-slate-white`}
+        className={`${sansFontConfiguration.variable} font-sans antialiased min-h-screen flex flex-col bg-white dark:bg-[#050505] text-slate-900 dark:text-slate-50 transition-colors duration-300`}
       >
         <ThemeProvider>
           {/* Visual indicators and navigational overlays */}

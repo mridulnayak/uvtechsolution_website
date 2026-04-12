@@ -60,10 +60,10 @@ export function Navbar() {
     <header
       id="global-navbar"
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
+        "fixed top-0 w-full z-50 transition-all duration-300 border-b",
         hasUserScrolled
-          ? "bg-white/80 dark:bg-deep-charcoal/80 backdrop-blur-md border-gray-100 dark:border-white/5 shadow-sm"
-          : "bg-transparent"
+          ? "bg-[#0a0f12]/80 dark:bg-[#050505]/80 backdrop-blur-md border-slate-800 dark:border-white/10 shadow-lg"
+          : "bg-transparent border-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,13 +101,15 @@ export function Navbar() {
                   key={navigationLink.name}
                   href={navigationLink.href}
                   className={cn(
-                    "relative px-1 py-2 text-sm font-medium transition-colors",
+                    "relative px-1 py-2 transition-colors",
                     isCurrentRoute
                       ? "text-brand-green"
-                      : "text-gray-600 dark:text-gray-300 hover:text-brand-green"
+                      : "text-slate-900 dark:text-slate-100 hover:text-brand-green"
                   )}
                 >
-                  <span className="relative z-10">{navigationLink.name}</span>
+                  <span className="relative z-10 font-bold uppercase tracking-widest text-[10px] sm:text-xs">
+                    {navigationLink.name}
+                  </span>
                   {isCurrentRoute && (
                     <motion.div
                       layoutId="navbar-indicator"

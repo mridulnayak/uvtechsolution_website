@@ -69,7 +69,7 @@ export function Footer() {
   ];
 
   return (
-    <footer id="global-footer" className="bg-white dark:bg-[#0a0f12] text-gray-900 dark:text-white border-t border-gray-100 dark:border-white/5 selection:bg-brand-green/30">
+    <footer id="global-footer" className="bg-[#050505] text-slate-100 dark:text-white border-t border-slate-800 dark:border-white/5 selection:bg-brand-green/30 px-4 md:px-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           
@@ -95,7 +95,7 @@ export function Footer() {
                 </div>
               </div>
             </Link>
-            <p className="text-gray-500 dark:text-slate-400 text-sm mb-8 leading-relaxed font-medium">
+            <p className="text-slate-600 dark:text-slate-400 text-sm mb-8 leading-relaxed font-semibold">
               Engineering high-performance, offline software ecosystems designed for mission-critical reliability in local enterprise environments.
             </p>
             <nav className="flex space-x-4">
@@ -137,7 +137,7 @@ export function Footer() {
                 <li key={navigationIndex}>
                   <Link 
                     href={navigationLink.path} 
-                    className="text-sm text-gray-500 dark:text-slate-400 hover:text-brand-green transition-colors font-semibold uppercase tracking-wider text-[11px]"
+                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-brand-green transition-colors font-bold uppercase tracking-wider text-[11px]"
                   >
                     {navigationLink.label}
                   </Link>

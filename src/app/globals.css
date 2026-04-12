@@ -6,12 +6,13 @@
 
 :root {
   --color-deep-charcoal: #050505;
-  --color-brand-green: #82d91e;
+  --color-brand-green: #91CB28; /* Logo matched green */
   --color-slate-white: #F8FAFC;
   --radius-3xl: 24px;
 
-  --background: var(--color-slate-white);
-  --foreground: var(--color-deep-charcoal);
+  /* Force a dark-first theme by default while allowing subtle system transitions */
+  --background: #0a0f12; 
+  --foreground: var(--color-slate-white);
   
   /* Responsive Fluid Typography Tokens */
   --font-fluid-h1: clamp(2.5rem, 8vw + 1rem, 6rem);
@@ -20,8 +21,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-deep-charcoal);
-    --foreground: var(--color-slate-white);
+    --background: #050505;
+    --foreground: #ffffff;
   }
 }
 
