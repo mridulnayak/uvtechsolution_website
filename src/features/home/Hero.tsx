@@ -81,7 +81,7 @@ export function Hero() {
     <>
       Seamless Technology. <br className="hidden md:block" />
       Enterprise Reach. <br className="hidden md:block" />
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-emerald-300">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#bef264] to-[#34d399] drop-shadow-[0_0_20px_rgba(145,203,40,0.3)]">
         Global Standards.
       </span>
     </>

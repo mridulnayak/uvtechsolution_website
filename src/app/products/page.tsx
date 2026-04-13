@@ -107,13 +107,13 @@ export default function ProductsPage() {
         {/* Page Heading Section */}
         <ScrollReveal>
           <header id="products-header" className="text-center max-w-3xl mx-auto mb-24">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-white">
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-white uppercase italic">
               Industry-Specific{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-emerald-400">
+              <span className="inline-block pr-2 text-transparent bg-clip-text bg-gradient-to-r from-[#bef264] to-[#34d399] drop-shadow-[0_0_15px_rgba(190,242,100,0.3)]">
                 Software
               </span>
             </h1>
-            <p className="text-xl text-gray-600 text-gray-300">
+            <p className="text-xl text-slate-300 font-medium leading-relaxed">
               Specialized digital tools engineered to solve the unique challenges of your business sector.
             </p>
           </header>
